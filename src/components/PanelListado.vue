@@ -7,9 +7,10 @@
                <img :src="getUrlImage(item)">
               </div>
               <div class="bloque-informacion">
-               <div class="informacion-nombre">
+              <a style="color: white;" :href="getUrlVolcan(item)">
+              <div class="informacion-nombre">
                 {{ item.nombre }}
-               </div>
+               </div></a>
                <div class="informacion-altura">
                 Altura: {{ item.altura }} metros sobre nivel del mar.
                </div>
@@ -47,6 +48,12 @@ function getUrlImage(item)
 {
   
   return "https://api-test.lat/api/volcanes/imagen/"+item.id;
+}
+
+function getUrlVolcan(item)
+{
+
+  return "https://api-test.lat/api/volcanes/"+item.id;
 }
 
 function obtenerImagenes(){
