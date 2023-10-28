@@ -5,7 +5,7 @@
       Volcanes API es un desarrollo 100% demostrativo sin ninguna intención comercial.
     </p>
     <p class="subtitle">
-      Si quiere utilizar la API puede utilizar postman o algún programar para consumir la API.
+      Si quiere utilizar la API puede utilizar postman o algún programa para consumir la API.
     </p>
   </div>
 </section>

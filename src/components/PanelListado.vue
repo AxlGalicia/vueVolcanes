@@ -123,7 +123,7 @@ console.log(window.screen.width);
     
         background-color: #000000;
         padding-top: 50px;
-        //height: 400px;
+        /*height: 400px;*/
         padding-left: 5%;
         padding-right: 5%;
 
@@ -213,7 +213,7 @@ console.log(window.screen.width);
         
         background-color: #000000;
         padding-top: 50px;
-        //height: 400px;
+        /*height: 400px;*/
         padding-left: 20%;
         padding-right: 20%;
 
@@ -303,7 +303,7 @@ console.log(window.screen.width);
     
         background-color: #000000;
         padding-top: 50px;
-        //height: 400px;
+        /*height: 400px;*/
         padding-left: 5%;
         padding-right: 5%;
 
