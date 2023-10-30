@@ -56,40 +56,6 @@ function getUrlVolcan(item)
   return "https://api-test.lat/api/volcanes/"+item.id;
 }
 
-function obtenerImagenes(){
-  items.value.forEach(myFunction);
-}
-
-function myFunction(item) {
-  //console.log("mi funcion");
-  //console.log(item.id);
-  var id = item.id.toString();
-  //console.log(id);
-  var url = 'https://api-test.lat/api/volcanes/imagen/'+id;
-  //console.log(url);
-  axios.get(url,{
-    headers:{
-      'Access-Control-Allow-Origin' : '*',
-      'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-    }
-  }).then(response =>{
-    console.log(response.data);
-    console.log(response.headers["content-type"]);
-    const typeimage = response.headers["content-type"];
-    const imageData = response.data;
-    const imgElement = document.createElement("img");
-    imgElement.src = "data:"+typeimage+";"+"base64,"+imageData;
-    document.body.appendChild(imgElement);
-    //console.log(response.headers.content-type);
-    
-    //items_imagen.value.push(response.data)
-  }).catch(error=>{
-    console.error(error);
-  });
-}
-
-  //const items = ref([{ message: 'Foo' }, { message: 'Bar' },{ message: 'objecto1'},{ message: 'objecto2'},{ message: 'objecto3'}])
-  //const items = ref(usuario[]);
   var items = ref([]);
   var items_imagen = ref([]);
   axios.get('https://api-test.lat/api/volcanes',{
@@ -102,21 +68,16 @@ function myFunction(item) {
         RegistrosPorPagina: 6
       }
     }).then(response =>{
-      console.log(response.data.length);
+
       for (var i = 0;i<response.data.length;i++)
       {
         var user = new usuario(response.data[i].id,response.data[i].nombre,response.data[i].descripcion,response.data[i].altura,response.data[i].ubicacion,response.data[i].ecosistema,response.data[i].imagen);
         items.value.push(user);
       }
-      console.log(response);
-      //console.log(items.value[0]);
-      //obtenerImagenes();
+
     }).catch(error=>{
       console.error(error);
     });
-
-//var clientWidth = document.getElementById('container').;
-console.log(window.screen.width);
 
 </script>
 
@@ -166,11 +127,6 @@ console.log(window.screen.width);
       /*min-height: 200px;*/
       min-height: 200px;
       margin-bottom: 10px;
-    }
-
-    .bloque-imagen{
-        /*flex: 0 0 calc(40% - 10px);*/
-        /*margin: 5px;*/
     }
 
     .bloque-informacion{
